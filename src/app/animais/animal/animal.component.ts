@@ -11,7 +11,7 @@ export class AnimalComponent implements OnInit {
 
   private urlOriginal = '';
 
-  @input() descricao = '';
+  @Input() descricao = '';
 
   @Input() set url(url: string){
     if(url.startsWith('data')){

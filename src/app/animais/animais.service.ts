@@ -26,10 +26,10 @@ export class AnimaisService {
     });
   }
 
-  buscaPorId(id:number):Observable<Animal>{
+  buscaPorId(id: number): Observable<Animal> {
     const token = this.tokenServise.retornaToken();
     const headers = new HttpHeaders().append('x-access-token', token);
 
-    return this.httpClient.get<Animal>(`${API}/photos/${id}`, {headers});
+    return this.httpClient.get<Animal>(`${API}/photos/${id}`, { headers });
   }
 }

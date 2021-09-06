@@ -18,18 +18,10 @@ export class AnimaisService {
   ) {}
 
   listaDoUsuario(nomeDoUsuario: string): Observable<Animais> {
-    const token = this.tokenServise.retornaToken();
-    const headers = new HttpHeaders().append('x-access-token', token);
-
-    return this.httpClient.get<Animais>(`${API}/${nomeDoUsuario}/photos`, {
-      headers,
-    });
+    return this.httpClient.get<Animais>(`${API}/${nomeDoUsuario}/photos`);
   }
 
   buscaPorId(id: number): Observable<Animal> {
-    const token = this.tokenServise.retornaToken();
-    const headers = new HttpHeaders().append('x-access-token', token);
-
-    return this.httpClient.get<Animal>(`${API}/photos/${id}`, { headers });
+    return this.httpClient.get<Animal>(`${API}/photos/${id}`);
   }
 }

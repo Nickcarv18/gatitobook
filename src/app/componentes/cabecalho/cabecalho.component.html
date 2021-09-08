@@ -1,6 +1,14 @@
 <header class="stick-top">
   <nav class="navbar navbar-ligth bg-ligth">
-    <a class="navbar-brand">Gatito Book</a>
+    <a class="navbar-brand">
+      <i class="fa fa-bars mr-2" (click)="menu.abreMenu()" (Keyup.space)=" menu.abreMenu()"></i>
+      Gatito Book
+    </a>
+    <app-menu #menu>
+      <ul class="list-unstyled">
+        <a [routerLink]="['animais', 'novo']">Novo Animal</a>
+      </ul>
+    </app-menu>
     <div *ngIf="user$ | async as user">
       <div *ngIf="user.name; else login">
         <i class="fa fa-user-circle mr-1"></i>

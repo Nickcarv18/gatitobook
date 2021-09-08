@@ -14,7 +14,7 @@ export class NovoAnimalComponent implements OnInit {
   formularioAnimal!: FormGroup;
   file!: File;
   preview!: string;
-  percentualConcluido!: 0;
+  percentualConcluido =  0;
 
   constructor(
     private animaisService: AnimaisService,
